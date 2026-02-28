@@ -1,0 +1,2 @@
+createSrcSidebar('[["rust_core",["",[["com",[["zoho",[["arattai",[["core",[],["messages.rs","whats_app_export.rs","whats_app_parse.rs"]],["message",[],["audio_messages.rs","document_messages.rs","image_messages.rs","sticker_messages.rs","text_messages.rs","video_messages.rs"]]],["core.rs","message.rs"]]],["arattai.rs"]]],["zoho.rs"]]],["com.rs","interop.rs","lib.rs"]]]]');
+//{"start":19,"fragment_lengths":[352]}
