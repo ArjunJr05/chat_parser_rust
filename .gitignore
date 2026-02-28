@@ -1,0 +1,15 @@
+/target
+**/*.rs.bk
+build_errors.txt
+check_errors.txt
+errors.txt
+wasm_errors.txt
+ios_check_errors.txt
+ios_build_errors.txt
+chat_export.bin
+.pnp
+.pnp.js
+node_modules/
+.DS_Store
+*.swp
+*~

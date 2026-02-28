@@ -1,0 +1,82 @@
+syntax = "proto3";
+
+package whatsapp;
+
+import "google/protobuf/timestamp.proto";
+
+enum Type {
+  TEXT = 0;
+  IMAGE = 1;
+  VIDEO = 2;
+  AUDIO = 3;
+  DOCUMENT = 4;
+  STICKER = 5;
+}
+
+message MessageBase {
+  string sender = 1;
+  google.protobuf.Timestamp timestamp = 2;
+  Type type = 3;
+}
+
+message TextMessage {
+  MessageBase base = 1;
+  string text = 2;
+}
+
+message ImageMessage {
+  MessageBase base = 1;
+  string name = 2;
+  uint32 height = 3;
+  uint32 width = 4;
+  uint64 size = 5;
+  string extension = 6;
+}
+
+message VideoMessage {
+  MessageBase base = 1;
+  string name = 2;
+  uint64 size = 3;
+  string duration = 4;
+  string extension = 5;
+  uint32 width = 6;
+  uint32 height = 7;
+}
+
+message AudioMessage {
+  MessageBase base = 1;
+  string name = 2;
+  uint64 size = 3;
+  string duration = 4;
+  string extension = 5;
+}
+
+message DocumentMessage {
+  MessageBase base = 1;
+  string name = 2;
+  string extension = 3;
+  uint64 size = 4;
+}
+
+message StickerMessage {
+  MessageBase base = 1;
+  string name = 2;
+  uint64 size = 3;
+  string extension = 4;
+}
+
+message WhatsAppMessage {
+  oneof content {
+    TextMessage text = 1;
+    ImageMessage image = 2;
+    VideoMessage video = 3;
+    AudioMessage audio = 4;
+    DocumentMessage document = 5;
+    StickerMessage sticker = 6;
+  }
+}
+
+message WhatsAppExport {
+  string chat_name = 1;
+  repeated WhatsAppMessage messages = 2;
+}
