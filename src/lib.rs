@@ -1,5 +1,6 @@
 pub mod com;
 pub mod interop;
+pub mod client;
 
 #[cfg(not(target_arch = "wasm32"))]
 use crate::com::zoho::arattai::core::messages::{WhatsAppExport as ProtoExport};
