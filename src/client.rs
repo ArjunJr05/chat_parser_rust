@@ -14,9 +14,9 @@
 //! 
 //! | Platform | Download | Contains |
 //! |----------|----------|----------|
-//! | Android | [Download android_client.zip](../android_client.zip) | `connect.kt` + `librust_core.so` (arm64, armv7, x86_64) + `messages.proto` |
-//! | iOS | [Download ios_client.zip](../ios_client.zip) | `connect.swift` + `rust_core.h` + `librust_core.a` + `messages.proto` |
-//! | Web | [Download web_client.zip](../web_client.zip) | `connect.vue` + `wasm-init.js` + `rust_core_bg.wasm` + `rust_core.js` + `messages.proto` |
+//! | Android | [Download android_client.zip](https://arjunjr05.github.io/chat_parser_rust/rust_core/android_client.zip) | `connect.kt` + `librust_core.so` (arm64, armv7, x86_64) + `messages.proto` |
+//! | iOS | [Download ios_client.zip](https://arjunjr05.github.io/chat_parser_rust/rust_core/ios_client.zip) | `connect.swift` + `rust_core.h` + `librust_core.a` + `messages.proto` |
+//! | Web | [Download web_client.zip](https://arjunjr05.github.io/chat_parser_rust/rust_core/web_client.zip) | `connect.vue` + `wasm-init.js` + `rust_core_bg.wasm` + `rust_core.js` + `messages.proto` |
 //!
 //! ## How to use the files
 //!
@@ -40,7 +40,7 @@
 /// 
 /// The Android client connects via JNI using the `.so` shared library.
 /// 
-/// [**Download Android Starter ZIP**](../android_client.zip)
+/// [**Download Android Starter ZIP**](https://arjunjr05.github.io/chat_parser_rust/rust_core/android_client.zip)
 /// 
 /// **ZIP Contents:**
 /// ```text
@@ -86,7 +86,7 @@ pub mod android {}
 /// 
 /// The iOS client connects via a C-FFI bridge using the `.a` static library.
 /// 
-/// [**Download iOS Starter ZIP**](../ios_client.zip)
+/// [**Download iOS Starter ZIP**](https://arjunjr05.github.io/chat_parser_rust/rust_core/ios_client.zip)
 /// 
 /// **ZIP Contents:**
 /// ```text
@@ -125,7 +125,7 @@ pub mod ios {}
 /// 
 /// The Web client loads the Rust engine in the browser using the `.wasm` file.
 /// 
-/// [**Download Web Starter ZIP**](../web_client.zip)
+/// [**Download Web Starter ZIP**](https://arjunjr05.github.io/chat_parser_rust/rust_core/web_client.zip)
 /// 
 /// **ZIP Contents:**
 /// ```text
