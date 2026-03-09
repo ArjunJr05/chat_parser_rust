@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["Type"],"mod":["whatsapp_message"],"struct":["AudioMessage","DocumentMessage","ImageMessage","MessageBase","StickerMessage","TextMessage","VideoMessage","WhatsAppExport","WhatsAppMessage"]};

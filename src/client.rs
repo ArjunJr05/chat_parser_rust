@@ -55,7 +55,7 @@
 /// 
 /// ### How to connect (Kotlin):
 /// ```kotlin
-/// package com.zoho.arattai
+/// package com.example.imported_rust
 /// 
 /// import android.util.Log
 /// import whatsapp.WhatsAppExport // The package name depends on your messages.proto

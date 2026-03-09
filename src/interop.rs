@@ -21,6 +21,8 @@ pub struct ByteBuffer {
     pub len: size_t,
 }
 
+/// C-FFI Bridge for iOS and Desktop.
+/// Returns a serialized Protobuf buffer inside a C-compatible struct.
 #[cfg(not(target_arch = "wasm32"))]
 #[unsafe(no_mangle)]
 pub extern "C" fn parse_chat_ffi(path: *const c_char) -> ByteBuffer {
@@ -41,12 +43,15 @@ pub extern "C" fn parse_chat_ffi(path: *const c_char) -> ByteBuffer {
     }
 }
 
+/// Frees the memory allocated by `parse_chat_ffi`.
 #[cfg(not(target_arch = "wasm32"))]
 #[unsafe(no_mangle)]
 pub extern "C" fn free_byte_buffer(buffer: ByteBuffer) {
     if !buffer.data.is_null() { unsafe { let _ = Box::from_raw(std::slice::from_raw_parts_mut(buffer.data, buffer.len)); } }
 }
 
+/// WASM Bridge for Web.
+/// Takes a byte slice and returns a Vector of bytes (Protobuf).
 #[wasm_bindgen]
 pub fn parse_chat_wasm(zip_bytes: &[u8]) -> Vec<u8> {
     match WhatsAppChatParser::parse_bytes(zip_bytes) {

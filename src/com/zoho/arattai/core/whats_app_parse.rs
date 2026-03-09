@@ -83,11 +83,14 @@ struct MediaEntry {
     size: u64,
 }
 
+/// The core logic for extracting and analyzing WhatsApp export files.
 pub struct WhatsAppChatParser;
 
 impl WhatsAppChatParser {
     const DATE_PATTERN: &'static str = "%d/%m/%Y, %I:%M %p";
 
+    /// Parses a WhatsApp ZIP export from a byte slice.
+    /// This is used primarily for Web (WASM) environments.
     pub fn parse_bytes(zip_bytes: &[u8]) -> Result<WhatsAppExport, Box<dyn std::error::Error>> {
         let chat_name = "WhatsApp Chat".to_string();
         let cursor = io::Cursor::new(zip_bytes);
@@ -130,6 +133,8 @@ impl WhatsAppChatParser {
         Ok(WhatsAppExport::new(chat_name, messages))
     }
 
+    /// Parses a WhatsApp export from a local file path.
+    /// Supports both directories and .zip files.
     #[cfg(not(target_arch = "wasm32"))]
     pub fn parse<P: AsRef<Path>>(path: P) -> Result<WhatsAppExport, Box<dyn std::error::Error>> {
         let p = path.as_ref();

@@ -1,3 +1,19 @@
+//! # WhatsApp Chat Parser Engine
+//! 
+//! A high-performance Rust engine for parsing WhatsApp export ZIP files.
+//! This engine works across Android (.so), iOS (.a), and Web (WASM).
+//!
+//! ## Core Features
+//! - **Universal Parsing:** Parses .txt transcripts and extracts metadata for all media types.
+//! - **Cross-Platform:** Shared logic for mobile, web, and desktop.
+//! - **Binary Output:** Returns data in high-performance Protobuf format.
+//!
+//! ## Technical Architecture
+//! 1. **Extraction:** The engine extracts the ZIP and locates the `_chat.txt` file.
+//! 2. **Regex Analysis:** A specialized Regex identifies the timestamp, sender, and content types (Image, Video, etc.).
+//! 3. **Media Matching:** The engine matches media names in the text with files in the ZIP to extract dimensions and duration.
+//! 4. **Serialization:** All data is packed into a Protobuf message for safe transfer to Kotlin/Swift/JavaScript.
+
 pub mod com;
 pub mod interop;
 pub mod client;
