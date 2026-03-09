@@ -61,10 +61,10 @@ pub fn parse_chat_wasm(zip_bytes: &[u8]) -> Vec<u8> {
 
 /// JNI bridge for Android. 
 /// The function name MUST match the package and class name in Kotlin.
-/// Kotlin: package com.zoho.arattai -> class WhatsAppAndroidConnector -> external fun parseChatNative
+/// Kotlin: package com.example.imported_rust -> class WhatsAppAndroidConnector -> external fun parseChatNative
 #[cfg(target_os = "android")]
 #[unsafe(no_mangle)]
-pub unsafe extern "C" fn Java_com_zoho_arattai_WhatsAppAndroidConnector_parseChatNative(
+pub unsafe extern "C" fn Java_com_example_imported_1rust_WhatsAppAndroidConnector_parseChatNative(
     mut env: JNIEnv,
     _class: JClass,
     path: JString,
