@@ -1,1 +1,0 @@
-rd_("irust_core")

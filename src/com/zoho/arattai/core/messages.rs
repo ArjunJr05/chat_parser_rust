@@ -4,6 +4,7 @@ use prost_types::Timestamp;
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Enumeration)]
 #[repr(i32)]
+
 pub enum Type {
     Text = 0,
     Image = 1,

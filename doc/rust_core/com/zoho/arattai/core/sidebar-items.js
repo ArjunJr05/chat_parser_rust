@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"mod":["messages","whats_app_export","whats_app_parse"]};

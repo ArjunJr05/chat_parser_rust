@@ -48,35 +48,27 @@
 /// ├── connect.kt                          ← Copy to your Kotlin source folder
 /// ├── messages.proto                      ← Run protoc to generate Java classes
 /// └── jniLibs/
-///     ├── arm64-v8a/librust_core.so       ← Modern phones (most common)
-///     ├── armeabi-v7a/librust_core.so     ← Older 32-bit phones
-///     └── x86_64/librust_core.so          ← Emulators
+///     ├── arm64-v8a/librust_core.so        ← Modern phones (most common)
+///     ├── armeabi-v7a/librust_core.so      ← Older 32-bit phones
+///     └── x86_64/librust_core.so           ← Emulators
 /// ```
 /// 
 /// ### How to connect (Kotlin):
 /// ```kotlin
-/// package com.zoho.arattai.client
+/// package com.zoho.arattai
 /// 
 /// import android.util.Log
-/// import com.zoho.arattai.core.messages.WhatsAppExport // Pre-generated using protoc
+/// import whatsapp.WhatsAppExport // The package name depends on your messages.proto
 /// 
 /// class WhatsAppAndroidConnector {
 ///     init {
-///         // Loads jniLibs/arm64-v8a/librust_core.so automatically
 ///         System.loadLibrary("rust_core")
 ///     }
 /// 
 ///     private external fun parseChatNative(path: String): ByteArray?
 /// 
-///     fun handleChatImport(zipPath: String) {
-///         val protoBytes = parseChatNative(zipPath)
-///         if (protoBytes != null) {
-///             val export = WhatsAppExport.parseFrom(protoBytes)
-///             Log.i("WhatsAppParser", "Imported: ${export.chatName}")
-///             for (msg in export.messagesList) {
-///                 if (msg.hasText()) Log.d("Msg", msg.text.text)
-///             }
-///         }
+///     fun parseChatAndGetProtoBytes(zipPath: String): ByteArray? {
+///         return parseChatNative(zipPath)
 ///     }
 /// }
 /// ```

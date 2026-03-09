@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"mod":["audio_messages","document_messages","image_messages","sticker_messages","text_messages","video_messages"]};
