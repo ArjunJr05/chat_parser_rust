@@ -38,6 +38,8 @@
 
 /// Android client integration (Kotlin).
 /// 
+/// ![Android Preview](../../../images/android_preview.jpg)
+/// 
 /// The Android client connects via JNI using the `.so` shared library.
 /// 
 /// [**Download Android Starter ZIP**](https://arjunjr05.github.io/chat_parser_rust/rust_core/android_client.zip)
@@ -75,6 +77,8 @@
 pub mod android {}
 
 /// iOS client integration (Swift).
+/// 
+/// ![iOS Preview](../../../images/ios_preview.jpg)
 /// 
 /// The iOS client connects via a C-FFI bridge using the `.a` static library.
 /// 
@@ -114,6 +118,8 @@ pub mod android {}
 pub mod ios {}
 
 /// Web client integration (Vue + WASM).
+/// 
+/// ![Web Preview](../../../images/web_preview.png)
 /// 
 /// The Web client loads the Rust engine in the browser using the `.wasm` file.
 /// 
